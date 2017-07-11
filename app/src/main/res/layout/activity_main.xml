@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_display"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cn.wontao.popmovies.MainActivity">
+    android:orientation="vertical"
+    tools:context="cn.wontao.popmovies.ui.MainActivity">
 
-    <fragment
-    android:id="@+id/display_fragment"
-    android:name="cn.wontao.popmovies.DisplayFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    <cn.wontao.popmovies.tab.SlidingTabLayout
+        android:id="@+id/sliding_tabs"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-</FrameLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="@android:color/white" />
+
+</LinearLayout>
